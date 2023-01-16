@@ -5,7 +5,7 @@ const card = ({ image }) => {
   return (
     <div className='my-10 mx-6'>
     <div class="max-w-sm rounded-lg overflow-hidden 
-       shadow-lg">
+       shadow-lg hover:opacity-80">
       <img src={image.webformatURL} 
       alt="" className="w-full" />
       <div className="px-6 py-6">

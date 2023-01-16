@@ -31,6 +31,7 @@ function App() {
 
         {images.map(image => (
           <Card key={image.id} image={image}/>
+          //المفتاح ضروري لاني بسوي ليست
         ))}
 
       </div>
