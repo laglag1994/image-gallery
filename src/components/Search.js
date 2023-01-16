@@ -1,11 +1,16 @@
 import React, {useState} from 'react'
 
-const Search = () => {
+const Search = ({searchValue}) => {
     const [text, setText]=useState();
 
+    const onSubmit=(e) =>{
+        e.preventDefault();
+        searchValue(text);
+    }
   return (
     <div className='max-w-sm rounded overflow-hidden my-10 mx-auto'>
-        <form className='w-full max-w-small'>
+        <form onSubmit={onSubmit}
+        className='w-full max-w-small'>
             <div className="flex items-center borderb borderb-2 border-teal-500 py-2 shadow-xl">
                <input onChange={e=> setText(e.target.value)}
                className='apperance-none bg-transperent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none' type="text" placeholder='Search Image' />
