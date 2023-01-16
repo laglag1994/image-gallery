@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from "react";
 import Card from "./components/Card";
+import Search from "./components/Search";
 
 //useEffect to send requests to api?
 
@@ -26,9 +27,11 @@ function App() {
 
 
   return (
+ 
     <div className="container mx-auto">
-      <div className="grid grid-cols-3 gap-4">
+      <Search/>
 
+      <div className="grid grid-cols-3 gap-4">
         {images.map(image => (
           <Card key={image.id} image={image}/>
           //المفتاح ضروري لاني بسوي ليست
@@ -36,6 +39,7 @@ function App() {
 
       </div>
     </div>
+
   );
 }
 
