@@ -1,12 +1,22 @@
 import React,{useState, useEffect} from "react";
-
+//useEffect to send requests to api?
 
 function App() {
 
-  
+  //array gets filled once we get the responed 
   const[images, setImages]=useState([]);
+  //as long as its still fetching its true once its done its false
   const[isLoading, setIsLoading]=useState(true);
+  //search term
+  const [term, setTerm]=useState('');
 
+
+  useEffect(() => {
+    fetch(`https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_KEY}&q=${term}&image_type=photo&pretty=true`)
+    .then(res => res.json())
+    .then(data=>console.log(data))
+    .catch(err=>console.log(err))
+  },[]);
 
   return (
     <div class="max-w-sm rounded-lg overflow-hidden 
