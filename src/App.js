@@ -1,4 +1,5 @@
 import React,{useState, useEffect} from "react";
+
 //useEffect to send requests to api?
 
 function App() {
@@ -15,8 +16,10 @@ function App() {
     fetch(`https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_KEY}&q=${term}&image_type=photo&pretty=true`)
     .then(res => res.json())
     .then(data=>console.log(data))
-    .catch(err=>console.log(err))
-  },[]);
+    .catch(err=>console.log(err));
+  }, []);
+
+
 
   return (
     <div class="max-w-sm rounded-lg overflow-hidden 
